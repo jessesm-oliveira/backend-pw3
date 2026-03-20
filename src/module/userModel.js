@@ -2,6 +2,15 @@
     const findAll=() =>{
         return users
     }
+    const create = (newUsers) =>{
+
+        users.push(newUsers)
+        return newUsers
+
+    }
+
+
     module.exports={
-        findAll
+        findAll,
+        create
     }
