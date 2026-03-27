@@ -23,10 +23,32 @@ const newUsers= {
 
 
  res.status(201).json(createdUser)
+
 }
+
+
+const getUserById= (req, res)=>{
+
+    console.log()
+   
+    const id =req.params.id
+
+    const user = userModel.findById(id)
+
+
+    if( !user ){
+        res.status(404).json({
+            message:" USUÁRIO NÃO ENCONTRADO. PARA DE SER BURRO E DIGITE  CERTO OS ID"
+        })
+    }
+
+    return res.json(user)
+}
+
 
  module.exports = {
     getAllUsers,
-    createUser
+    createUser,
+    getUserById
 }
  
